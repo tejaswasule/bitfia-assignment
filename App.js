@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductResult from './components/ProductResult';
 import ProductSearchBox from './components/ProductSearchBox';
-import {Keyboard,ScrollView, View } from 'react-native';
+import {Text,ScrollView, View } from 'react-native';
 import styles from './styles/styles';
 var data = require('./data/products.json')
 
@@ -15,15 +15,14 @@ export default class App extends React.Component {
     };
   }
   componentDidMount(){
-  
     this.setState({
     dataSource: data
   });
   }
 
   _onSearch = () =>{ 
-    Keyboard.dismiss()
-    if(this.state.text!==undefined){
+    if(this.state.text!==undefined && this.state.text!=='' && this.state.text!==null){
+      
       var listofNames  = this.state.dataSource.ProductCollection.filter(i=>i.Name.toLowerCase().indexOf(this.state.text.toLowerCase())===0)
      
         this.setState({
@@ -43,8 +42,9 @@ export default class App extends React.Component {
   render() {
    const {listofNames,text,isSearched } = this.state 
     return (
-      <ScrollView style={styles.scrollView}> 
+      <ScrollView keyboardShouldPersistTaps='always' style={styles.scrollView}> 
       <View style={styles.container}>
+          <Text style={styles.appName}>SearchApp</Text>
           <ProductSearchBox  _onSearch={this._onSearch} onChangeText={text => this.setState({ text })} 
           text={text} styles={styles}/>
           <ProductResult listofNames={listofNames} styles={styles} isSearched = {isSearched}/>

@@ -7,9 +7,20 @@ export default styles = StyleSheet.create({
       width: "100%",
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: 30,
-      paddingHorizontal: 15,
-      marginVertical:50,
+      marginVertical:24
+      
+    },
+    appName:{
+        fontSize:22,
+        backgroundColor:'#af8eb5',
+        textAlign:'left',
+        color:'white',
+        width:'100%', 
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 10,
+        paddingHorizontal:5,
+      
     },
     scrollView:{
         marginVertical:0,
@@ -50,13 +61,13 @@ export default styles = StyleSheet.create({
       borderRadius: 5,
       width: 300,
       paddingVertical:12,
-      marginVertical: 0,
+      marginVertical: 20,
     },
     button: {
       width: 300,
       backgroundColor: "#af8eb5",
       borderRadius: 5,
-      marginVertical: 10,
+      marginVertical: 5,
       paddingVertical: 12
     },
     buttonText: {
