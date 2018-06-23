@@ -1,4 +1,5 @@
-
+## Bitfia Assignment
+Simple search using React Native from JSON file.
 
 ## Steps to Start
 
